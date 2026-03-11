@@ -1,0 +1,30 @@
+{
+  "name": "skill-evaluator",
+  "version": "1.0.0",
+  "description": "OpenClaw Skill 价值评估工具 - 评估技能价值和安装建议",
+  "author": "yanjiayi-bd",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["evaluate", "recommendation", "value", "skill"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "skill_name": {
+      "type": "string",
+      "description": "要评估的 Skill 名称",
+      "required": true
+    },
+    "use_case": {
+      "type": "string",
+      "description": "你的使用场景（可选）",
+      "required": false
+    }
+  },
+  "outputs": {
+    "evaluation": {
+      "type": "object",
+      "description": "评估结果"
+    }
+  }
+}

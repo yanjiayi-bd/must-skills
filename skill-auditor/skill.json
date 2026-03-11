@@ -1,0 +1,31 @@
+{
+  "name": "skill-auditor",
+  "version": "1.0.0",
+  "description": "OpenClaw Skill 审计工具 - 安全扫描和代码审查",
+  "author": "yanjiayi-bd",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["audit", "security", "scan", "skill"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "skill_path": {
+      "type": "string",
+      "description": "要审计的 Skill 路径或名称",
+      "required": true
+    },
+    "audit_level": {
+      "type": "string",
+      "description": "审计级别: basic | standard | strict",
+      "default": "standard",
+      "enum": ["basic", "standard", "strict"]
+    }
+  },
+  "outputs": {
+    "report": {
+      "type": "object",
+      "description": "审计报告"
+    }
+  }
+}
