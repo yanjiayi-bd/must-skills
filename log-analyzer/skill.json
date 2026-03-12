@@ -1,0 +1,35 @@
+{
+  "name": "log-analyzer",
+  "version": "1.0.0",
+  "description": "日志分析器 - 日志解析、错误检测、趋势分析、告警生成",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["log", "analysis", "monitoring", "alert"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "log_source": {
+      "type": "string",
+      "description": "日志文件路径或来源",
+      "required": true
+    },
+    "time_range": {
+      "type": "string",
+      "description": "时间范围 (如: 1h, 1d)",
+      "default": "1h"
+    },
+    "level": {
+      "type": "array",
+      "description": "日志级别: error | warn | info | debug",
+      "default": ["error", "warn"]
+    }
+  },
+  "outputs": {
+    "analysis": {
+      "type": "object",
+      "description": "分析报告"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "doc-generator",
+  "version": "1.0.0",
+  "description": "文档生成器 - 自动生成代码文档、API 文档、使用说明",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["doc", "documentation", "generator", "markdown"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "source": {
+      "type": "string",
+      "description": "源代码或项目路径",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "description": "文档类型: code | api | readme | wiki",
+      "required": true
+    },
+    "template": {
+      "type": "string",
+      "description": "模板风格: minimal | standard | detailed",
+      "default": "standard"
+    }
+  },
+  "outputs": {
+    "documentation": {
+      "type": "string",
+      "description": "生成的文档"
+    }
+  }
+}

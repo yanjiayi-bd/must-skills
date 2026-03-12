@@ -1,0 +1,40 @@
+{
+  "name": "api-tester",
+  "version": "1.0.0",
+  "description": "API 测试工具 - 接口测试、性能测试、文档生成",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["api", "test", "http", "rest"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "url": {
+      "type": "string",
+      "description": "API 地址",
+      "required": true
+    },
+    "method": {
+      "type": "string",
+      "description": "HTTP 方法: GET | POST | PUT | DELETE",
+      "default": "GET"
+    },
+    "headers": {
+      "type": "object",
+      "description": "请求头",
+      "required": false
+    },
+    "body": {
+      "type": "any",
+      "description": "请求体",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "测试结果"
+    }
+  }
+}

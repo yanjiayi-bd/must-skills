@@ -1,0 +1,35 @@
+{
+  "name": "task-planner",
+  "version": "1.0.0",
+  "description": "任务规划师 - 智能分解任务、制定执行计划、跟踪进度",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["task", "planning", "management", "productivity"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "goal": {
+      "type": "string",
+      "description": "目标任务",
+      "required": true
+    },
+    "constraints": {
+      "type": "object",
+      "description": "约束条件 (时间/资源/依赖)",
+      "required": false
+    },
+    "context": {
+      "type": "string",
+      "description": "背景信息",
+      "required": false
+    }
+  },
+  "outputs": {
+    "plan": {
+      "type": "object",
+      "description": "执行计划"
+    }
+  }
+}

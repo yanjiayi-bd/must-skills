@@ -1,0 +1,36 @@
+{
+  "name": "web-search",
+  "version": "1.0.0",
+  "description": "网络搜索技能 - 支持多引擎搜索和信息整合",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["search", "web", "information", "research"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "query": {
+      "type": "string",
+      "description": "搜索关键词",
+      "required": true
+    },
+    "engine": {
+      "type": "string",
+      "description": "搜索引擎: google | bing | duckduckgo",
+      "default": "google",
+      "enum": ["google", "bing", "duckduckgo"]
+    },
+    "limit": {
+      "type": "number",
+      "description": "返回结果数量",
+      "default": 10
+    }
+  },
+  "outputs": {
+    "results": {
+      "type": "array",
+      "description": "搜索结果列表"
+    }
+  }
+}

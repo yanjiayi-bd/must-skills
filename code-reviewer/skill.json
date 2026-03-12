@@ -1,0 +1,35 @@
+{
+  "name": "code-reviewer",
+  "version": "1.0.0",
+  "description": "代码审查专家 - 自动化代码检查、质量评估、改进建议",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["code", "review", "quality", "analysis"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "code": {
+      "type": "string",
+      "description": "代码内容或文件路径",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "description": "编程语言",
+      "required": true
+    },
+    "focus": {
+      "type": "array",
+      "description": "审查重点: security | performance | style | bugs",
+      "default": ["security", "bugs"]
+    }
+  },
+  "outputs": {
+    "review": {
+      "type": "object",
+      "description": "审查报告"
+    }
+  }
+}

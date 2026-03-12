@@ -1,0 +1,30 @@
+{
+  "name": "git-helper",
+  "version": "1.0.0",
+  "description": "Git 助手 - 版本控制、分支管理、冲突解决",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["git", "version-control", "branch", "merge"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "command": {
+      "type": "string",
+      "description": "Git 命令或操作描述",
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "description": "仓库路径",
+      "default": "."
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "操作结果"
+    }
+  }
+}

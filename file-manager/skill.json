@@ -1,0 +1,35 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "智能文件管理器 - 文件操作、批量处理、目录分析",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["file", "filesystem", "management", "batch"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "path": {
+      "type": "string",
+      "description": "目标路径",
+      "required": true
+    },
+    "operation": {
+      "type": "string",
+      "description": "操作: list | search | organize | analyze",
+      "required": true
+    },
+    "pattern": {
+      "type": "string",
+      "description": "匹配模式 (glob/regex)",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "操作结果"
+    }
+  }
+}
