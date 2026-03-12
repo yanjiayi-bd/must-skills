@@ -1,0 +1,13 @@
+# ClawHub Top 10 Skills Auto Sync - Weekly Cron Job
+# 每周一凌晨 2:00 自动执行
+
+# 设置环境变量
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+HOME=/root
+
+# 每周一 2:00 AM 执行技能同步
+0 2 * * 1 cd /workspace/projects/must-skills && /usr/bin/python3 scripts/clawhub_sync.py >> /tmp/clawhub-cron.log 2>&1
+
+# 可选: 每周日 10:00 AM 发送周报摘要
+0 10 * * 0 cd /workspace/projects/must-skills && /usr/bin/python3 scripts/weekly_report.py >> /tmp/clawhub-report.log 2>&1

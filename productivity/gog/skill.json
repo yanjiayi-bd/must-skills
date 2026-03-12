@@ -1,35 +1,17 @@
 {
   "name": "gog",
   "version": "1.0.0",
-  "description": "Google Workspace 命令行工具 - 适用于 Gmail、日历、云端硬盘、通讯录、表格和文档",
-  "author": "yanjiayi-bd (cloned from clawhub top1)",
+  "description": "Google Workspace CLI",
+  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
   "license": "MIT",
   "type": "skill",
-  "tags": ["google", "workspace", "gmail", "calendar", "drive", "cli"],
+  "tags": [
+    "auto-sync",
+    "clawhub-top10"
+  ],
   "entry": {
     "prompt": "prompt.md"
   },
-  "inputs": {
-    "service": {
-      "type": "string",
-      "description": "Google 服务: gmail | calendar | drive | contacts | sheets | docs",
-      "required": true
-    },
-    "action": {
-      "type": "string",
-      "description": "操作类型",
-      "required": true
-    },
-    "params": {
-      "type": "object",
-      "description": "操作参数",
-      "default": {}
-    }
-  },
-  "outputs": {
-    "result": {
-      "type": "object",
-      "description": "操作结果"
-    }
-  }
+  "inputs": {},
+  "outputs": {}
 }

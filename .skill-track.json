@@ -1,0 +1,60 @@
+{
+  "last_sync": "2026-03-12T19:22:45.076235",
+  "tracked_skills": {
+    "gog": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.025857"
+    },
+    "self-improving-agent": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.031865"
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.038655"
+    },
+    "ontology": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.044592"
+    },
+    "find-skills": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.049910"
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.055147"
+    },
+    "github": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.060228"
+    },
+    "sonoscli": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.065260"
+    },
+    "weather": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.070261"
+    },
+    "proactive-agent": {
+      "version": "1.0.0",
+      "status": "learned",
+      "last_check": "2026-03-12T19:22:45.076228"
+    }
+  },
+  "stats": {
+    "total_learned": 10,
+    "total_updated": 0,
+    "weekly_history": []
+  }
+}

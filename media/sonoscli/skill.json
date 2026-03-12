@@ -1,35 +1,17 @@
 {
   "name": "sonoscli",
   "version": "1.0.0",
-  "description": "控制 Sonos 音箱，支持播放、音量、队列管理",
-  "author": "yanjiayi-bd (cloned from clawhub top8)",
+  "description": "Sonos control",
+  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
   "license": "MIT",
   "type": "skill",
-  "tags": ["sonos", "audio", "smart-home", "music"],
+  "tags": [
+    "auto-sync",
+    "clawhub-top10"
+  ],
   "entry": {
     "prompt": "prompt.md"
   },
-  "inputs": {
-    "action": {
-      "type": "string",
-      "description": "操作: play | pause | stop | volume | next | prev | queue",
-      "required": true
-    },
-    "room": {
-      "type": "string",
-      "description": "房间名称",
-      "default": "all"
-    },
-    "value": {
-      "type": "string",
-      "description": "操作值（如音量大小）",
-      "required": false
-    }
-  },
-  "outputs": {
-    "status": {
-      "type": "object",
-      "description": "音箱状态"
-    }
-  }
+  "inputs": {},
+  "outputs": {}
 }

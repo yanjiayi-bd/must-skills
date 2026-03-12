@@ -1,30 +1,17 @@
 {
   "name": "ontology",
   "version": "1.0.0",
-  "description": "为结构化智能体记忆与可组合技能构建的类型化知识图谱",
-  "author": "yanjiayi-bd (cloned from clawhub top4)",
+  "description": "Knowledge graph",
+  "author": "yanjiayi-bd (auto-sync from clawhub, original: oswalpalash)",
   "license": "MIT",
   "type": "skill",
-  "tags": ["knowledge-graph", "ontology", "memory", "structured"],
+  "tags": [
+    "auto-sync",
+    "clawhub-top10"
+  ],
   "entry": {
     "prompt": "prompt.md"
   },
-  "inputs": {
-    "action": {
-      "type": "string",
-      "description": "操作: create | query | relate | export",
-      "required": true
-    },
-    "entity": {
-      "type": "object",
-      "description": "实体信息",
-      "required": false
-    }
-  },
-  "outputs": {
-    "graph": {
-      "type": "object",
-      "description": "知识图谱数据"
-    }
-  }
+  "inputs": {},
+  "outputs": {}
 }
