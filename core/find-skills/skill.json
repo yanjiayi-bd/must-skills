@@ -1,17 +1,29 @@
 {
   "name": "find-skills",
   "version": "1.0.0",
-  "description": "Skill discovery",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: JimLiuxinghai)",
+  "description": "Skill discovery and management tool - search, install, update skills from ClawHub and GitHub",
+  "homepage": "https://www.clawhub.ai",
+  "author": "JimLiuxinghai (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["skill-discovery", "package-manager", "clawhub", "cli", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔍",
+      "requires": {
+        "bins": ["npx"]
+      },
+      "install": [
+        {
+          "id": "skills-cli",
+          "kind": "npm",
+          "pkg": "skills",
+          "label": "Install skills CLI globally"
+        }
+      ]
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }
