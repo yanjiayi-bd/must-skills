@@ -2,6 +2,35 @@
 
 精选 OpenClaw 高价值技能集合，按功能分类组织，包含 **ClawHub Top 10 热门技能复刻**。
 
+> 🔄 **自动同步**: 本项目已配置每周自动从 ClawHub 同步 Top 10 技能，详见 [AUTO_SYNC.md](AUTO_SYNC.md)
+
+## 🔄 自动同步系统
+
+本项目配备了完整的自动化系统：
+
+- ✅ **每周自动学习** ClawHub Top 10 热门技能
+- ✅ **自动安装** 到 OpenClaw 并激活使用
+- ✅ **版本检查** 有更新自动升级
+- ✅ **自动复刻** 到 GitHub 仓库
+- ✅ **生成周报** 学习进度追踪
+
+```bash
+# 一键启动自动同步系统
+./scripts/setup.sh
+
+# 手动运行同步
+python3 scripts/clawhub_sync.py
+
+# 查看追踪状态
+cat .skill-track.json | jq '.stats'
+```
+
+**定时任务**:
+- 每周一 2:00 AM - 自动同步技能
+- 每周日 10:00 AM - 生成学习周报
+
+## 🔥 ClawHub Top 10 热门技能
+
 ## 🔥 ClawHub Top 10 热门技能
 
 > 复刻自 [ClawHub](https://clawhub.ai) 官方热门榜单，按下载量排序
