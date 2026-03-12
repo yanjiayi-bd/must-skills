@@ -1,177 +1,220 @@
-# Must Skills - OpenClaw 技能集合
+# Must-Skills for OpenClaw
 
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-blue)](https://openclaw.ai)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-13-orange)](./)
+精选 OpenClaw 高价值技能集合，复刻自 ClawHub Top 10 热门技能，涵盖飞书生态、系统运维、多媒体处理等领域。
 
-> 一套精选的 OpenClaw Agent 技能工具，精选自 ClawHub Top 10 热门技能。
+## 📊 技能概览
 
-## 📁 项目结构
+### 技能矩阵
+
+| 技能 | 分类 | 版本 | 描述 |
+|------|------|------|------|
+| `feishu-doc` | 飞书集成 | 1.0.0 | 飞书云文档协作与管理 |
+| `feishu-drive` | 飞书集成 | 1.0.0 | 飞书云盘文件操作 |
+| `feishu-wiki` | 飞书集成 | 1.0.0 | 飞书知识库管理 |
+| `feishu-perm` | 飞书集成 | 1.0.0 | 飞书权限与安全控制 |
+| `healthcheck` | 系统运维 | 1.0.0 | 系统健康检查与诊断 |
+| `1password` | 系统运维 | 1.0.0 | 1Password 凭证管理 |
+| `nano-banana-pro` | 多媒体 | 1.0.0 | Gemini 图像生成专业版 |
+| `video-frames` | 多媒体 | 1.0.0 | FFmpeg 视频转图片 |
+| `skill-creator` | 基础工具 | 1.0.0 | 技能创建与打包工具 |
+| `weather` | 基础工具 | 1.0.0 | 实时天气查询与预报 |
+
+## 📁 目录结构
 
 ```
 must-skills/
-├── README.md                   # 项目说明
-├── skill-auditor/              # Skill 安全审计工具
-├── skill-evaluator/            # Skill 价值评估工具
-├── openclaw-evaluator/         # OpenClaw 能力等级鉴定工具
-├── web-search/                 # 网络搜索 (Top 1 ⭐)
-├── github-assistant/           # GitHub 助手 (Top 2 ⭐)
-├── file-manager/               # 文件管理器 (Top 3 ⭐)
-├── code-reviewer/              # 代码审查 (Top 4 ⭐)
-├── task-planner/               # 任务规划师 (Top 5 ⭐)
-├── memory-manager/             # 记忆管理器 (Top 6 ⭐)
-├── api-tester/                 # API 测试工具 (Top 7 ⭐)
-├── doc-generator/              # 文档生成器 (Top 8 ⭐)
-├── git-helper/                 # Git 助手 (Top 9 ⭐)
-└── log-analyzer/               # 日志分析器 (Top 10 ⭐)
+├── README.md              # 本文件
+├── feishu-doc/            # 飞书文档协作
+│   ├── skill.json
+│   └── prompt.md
+├── feishu-drive/          # 飞书云盘
+│   ├── skill.json
+│   └── prompt.md
+├── feishu-wiki/           # 飞书知识库
+│   ├── skill.json
+│   └── prompt.md
+├── feishu-perm/           # 飞书权限管理
+│   ├── skill.json
+│   └── prompt.md
+├── healthcheck/           # 系统健康检查
+│   ├── skill.json
+│   └── prompt.md
+├── 1password/             # 1Password 集成
+│   ├── skill.json
+│   └── prompt.md
+├── nano-banana-pro/       # AI 图像生成
+│   ├── skill.json
+│   └── prompt.md
+├── video-frames/          # 视频处理
+│   ├── skill.json
+│   └── prompt.md
+├── skill-creator/         # 技能创建器
+│   ├── skill.json
+│   └── prompt.md
+└── weather/               # 天气查询
+    ├── skill.json
+    └── prompt.md
 ```
-
-## 🛠️ 技能列表
-
-### 核心评估工具 (3个)
-
-| 技能 | 功能 | 用途 |
-|------|------|------|
-| **skill-auditor** | 四级风险安全审计 | 审计 Skill 安全性 |
-| **skill-evaluator** | VQI 价值评估模型 | 评估 Skill 价值 |
-| **openclaw-evaluator** | 八级能力等级鉴定 | 评估 Agent 能力 |
-
-### ClawHub Top 10 复刻 (10个)
-
-| 排名 | 技能 | 功能描述 | 标签 |
-|-----|------|---------|------|
-| ⭐ 1 | **web-search** | 多引擎网络搜索和信息整合 | search, web, research |
-| ⭐ 2 | **github-assistant** | 仓库管理、Issue/PR 处理、代码审查 | github, devops, code |
-| ⭐ 3 | **file-manager** | 智能文件管理、批量处理、目录分析 | file, filesystem, batch |
-| ⭐ 4 | **code-reviewer** | 自动化代码检查、质量评估、改进建议 | code, review, quality |
-| ⭐ 5 | **task-planner** | 智能任务分解、执行计划、进度跟踪 | task, planning, productivity |
-| ⭐ 6 | **memory-manager** | 智能记忆存储、检索、关联和压缩 | memory, storage, context |
-| ⭐ 7 | **api-tester** | 接口测试、性能测试、文档生成 | api, test, http |
-| ⭐ 8 | **doc-generator** | 自动生成代码文档、API 文档 | doc, documentation, markdown |
-| ⭐ 9 | **git-helper** | 版本控制、分支管理、冲突解决 | git, version-control |
-| ⭐ 10 | **log-analyzer** | 日志解析、错误检测、趋势分析 | log, analysis, monitoring |
 
 ## 🚀 快速开始
 
-### 安装单个技能
+### 安装技能
 
 ```bash
-# 安装网络搜索技能
-cd web-search
-openclaw skills install .
+# 安装单个技能
+cp -r must-skills/feishu-doc ~/.openclaw/skills/
 
-# 安装 GitHub 助手
-cd github-assistant
-openclaw skills install .
+# 或使用 openclaw CLI
+openclaw skills install ./must-skills/feishu-doc
 
-# 安装代码审查工具
-cd code-reviewer
-openclaw skills install .
+# 安装所有技能
+for skill in must-skills/*/; do
+  openclaw skills install "$skill"
+done
 ```
 
 ### 使用技能
 
 ```bash
-# 执行网络搜索
-openclaw skills run web-search --query "OpenClaw 最新版本"
+# 查看已安装技能
+openclaw skills list
 
-# 审查代码
-openclaw skills run code-reviewer --code "./src" --language "typescript"
-
-# 生成文档
-openclaw skills run doc-generator --source "./src" --type "api"
+# 运行技能
+openclaw skills run weather --input location="北京"
+openclaw skills run feishu-doc --input action="list"
+openclaw skills run healthcheck --input target="all"
 ```
 
-## 📊 技能对比
+## 📖 使用场景
 
-### 开发工具类
-| 技能 | 主要功能 | 适用场景 |
-|------|---------|---------|
-| code-reviewer | 代码质量检查 | 代码提交前审查 |
-| github-assistant | GitHub 操作 | 开源项目管理 |
-| git-helper | Git 操作 | 版本控制 |
-| doc-generator | 文档生成 | 项目文档维护 |
-| api-tester | 接口测试 | API 开发测试 |
+### 1. 飞书生态集成
 
-### 效率工具类
-| 技能 | 主要功能 | 适用场景 |
-|------|---------|---------|
-| web-search | 信息检索 | 调研、学习 |
-| file-manager | 文件管理 | 批量处理文件 |
-| task-planner | 任务规划 | 项目管理 |
-| memory-manager | 记忆管理 | 长期对话保持 |
-| log-analyzer | 日志分析 | 系统监控 |
+**适合人群**: 使用飞书的企业团队、飞书管理员
 
-## 📖 文档
+```bash
+# 场景：团队需要快速迁移文档
+openclaw skills run feishu-doc --input action="export" --input folder="项目文档"
 
-| 类别 | 技能 | 文档 |
+# 场景：设置部门权限
+openclaw skills run feishu-perm --input action="grant" --input user="team@company.com" --input scope="editor"
+```
+
+### 2. 系统运维监控
+
+**适合人群**: DevOps 工程师、系统管理员
+
+```bash
+# 场景：服务器健康检查
+openclaw skills run healthcheck --input target="all" --input notify=true
+
+# 场景：批量获取服务器凭证
+openclaw skills run 1password --input action="get" --input item="prod-db-credentials"
+```
+
+### 3. 多媒体处理
+
+**适合人群**: 内容创作者、视频编辑
+
+```bash
+# 场景：生成配图
+openclaw skills run nano-banana-pro --input prompt="科技感办公场景，蓝色调，极简风格"
+
+# 场景：提取视频封面帧
+openclaw skills run video-frames --input video="demo.mp4" --input interval="00:00:01"
+```
+
+### 4. 日常工具
+
+**适合人群**: 所有用户
+
+```bash
+# 场景：出门前查天气
+openclaw skills run weather --input location="上海" --input days=3
+
+# 场景：快速创建新技能
+openclaw skills run skill-creator --input skill_name="my-custom-skill"
+```
+
+## 🔧 技能配置
+
+### Feishu 集成
+
+需要在 `openclaw.json` 中配置飞书凭证：
+
+```json
+{
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_xxxxx",
+      "appSecret": "your-secret"
+    }
+  }
+}
+```
+
+### 1Password 集成
+
+需要配置 1Password CLI 认证：
+
+```bash
+op account add --address my.1password.com --email user@example.com
+```
+
+### Gemini API
+
+设置 API 密钥：
+
+```bash
+export GEMINI_API_KEY="your-api-key"
+```
+
+## 📚 技能文档
+
+| 技能 | 文档 | 示例 |
 |------|------|------|
-| 评估 | skill-auditor | [skill-auditor/prompt.md](./skill-auditor/prompt.md) |
-| 评估 | skill-evaluator | [skill-evaluator/prompt.md](./skill-evaluator/prompt.md) |
-| 评估 | openclaw-evaluator | [openclaw-evaluator/prompt.md](./openclaw-evaluator/prompt.md) |
-| 搜索 | web-search | [web-search/prompt.md](./web-search/prompt.md) |
-| 开发 | github-assistant | [github-assistant/prompt.md](./github-assistant/prompt.md) |
-| 开发 | code-reviewer | [code-reviewer/prompt.md](./code-reviewer/prompt.md) |
-| 开发 | api-tester | [api-tester/prompt.md](./api-tester/prompt.md) |
-| 开发 | doc-generator | [doc-generator/prompt.md](./doc-generator/prompt.md) |
-| 开发 | git-helper | [git-helper/prompt.md](./git-helper/prompt.md) |
-| 效率 | file-manager | [file-manager/prompt.md](./file-manager/prompt.md) |
-| 效率 | task-planner | [task-planner/prompt.md](./task-planner/prompt.md) |
-| 效率 | memory-manager | [memory-manager/prompt.md](./memory-manager/prompt.md) |
-| 效率 | log-analyzer | [log-analyzer/prompt.md](./log-analyzer/prompt.md) |
+| feishu-doc | [README](feishu-doc/README.md) | [examples](feishu-doc/examples/) |
+| healthcheck | [README](healthcheck/README.md) | [examples](healthcheck/examples/) |
+| weather | [README](weather/README.md) | [examples](weather/examples/) |
 
-## 🎯 使用场景
+## 🏆 技能对比
 
-### 场景 1: 新项目启动
-```bash
-# 1. 规划任务
-openclaw skills run task-planner --goal "启动新项目"
-
-# 2. 生成项目文档
-openclaw skills run doc-generator --source "./" --type "readme"
-
-# 3. 初始化 Git
-openclaw skills run git-helper --command "init"
-```
-
-### 场景 2: 代码审查流程
-```bash
-# 1. 审查代码
-openclaw skills run code-reviewer --code "./src" --language "python"
-
-# 2. 运行测试
-openclaw skills run api-tester --url "http://localhost:8080"
-
-# 3. 提交到 GitHub
-openclaw skills run github-assistant --action "pr" --repo "owner/repo"
-```
-
-### 场景 3: 系统监控
-```bash
-# 1. 分析日志
-openclaw skills run log-analyzer --log_source "/var/log/app.log"
-
-# 2. 搜索解决方案
-openclaw skills run web-search --query "如何解决 {error}"
-
-# 3. 生成报告
-openclaw skills run doc-generator --type "wiki"
-```
+| 特性 | ClawHub 原版 | 本复刻版 |
+|------|-------------|---------|
+| 开源协议 | 闭源 | MIT |
+| 可定制性 | 有限 | 完全可定制 |
+| 本地运行 | ❌ | ✅ |
+| 离线支持 | ❌ | ✅ |
+| 二次开发 | 受限 | 完全开放 |
 
 ## 🤝 贡献
 
-欢迎提交 Issue 和 PR！
+欢迎贡献新的技能！请遵循以下规范：
 
-### 添加新技能
-1. 创建 `{skill-name}/skill.json`
-2. 创建 `{skill-name}/prompt.md`
-3. 更新 README.md
-4. 提交 PR
+1. 每个技能独立目录
+2. 包含 `skill.json` 和 `prompt.md`
+3. 添加使用示例
+4. 更新本 README
+
+```bash
+# 提交新技能
+git checkout -b feature/my-skill
+git add must-skills/my-skill/
+git commit -m "feat: add my-skill"
+git push origin feature/my-skill
+```
 
 ## 📄 许可证
 
-MIT License
+MIT License - 详见 [LICENSE](../LICENSE)
 
 ## 🙏 致谢
 
-技能设计参考自 [ClawHub](https://clawhub.ai) 热门技能排行榜
+技能设计参考：
+- [ClawHub](https://clawhub.ai) - 技能榜单与灵感
+- [Awesome OpenClaw Skills](https://github.com/VoltAgent/awesome-openclaw-skills) - 社区技能资源
+
+---
+
+**维护者**: yanjiayi-bd  
+**最后更新**: 2025-01

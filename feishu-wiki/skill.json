@@ -1,0 +1,35 @@
+{
+  "name": "feishu-wiki",
+  "version": "1.0.0",
+  "description": "飞书知识库节点导航与操作",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["feishu", "lark", "wiki", "knowledge"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "action": {
+      "type": "string",
+      "description": "操作类型: browse | search | create | edit",
+      "required": true
+    },
+    "wiki_url": {
+      "type": "string",
+      "description": "知识库链接",
+      "required": true
+    },
+    "node": {
+      "type": "string",
+      "description": "节点路径或 ID",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "操作结果"
+    }
+  }
+}

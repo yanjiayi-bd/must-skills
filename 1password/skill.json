@@ -1,0 +1,35 @@
+{
+  "name": "1password",
+  "version": "1.0.0",
+  "description": "凭证管理，通过 1Password CLI 安全读取或注入机密信息",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["security", "password", "vault", "secret"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "action": {
+      "type": "string",
+      "description": "操作: get | create | update | delete | list",
+      "required": true
+    },
+    "item": {
+      "type": "string",
+      "description": "凭证项名称或 ID",
+      "required": true
+    },
+    "vault": {
+      "type": "string",
+      "description": "保险库名称",
+      "default": "Private"
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "操作结果"
+    }
+  }
+}

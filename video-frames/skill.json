@@ -1,0 +1,35 @@
+{
+  "name": "video-frames",
+  "version": "1.0.0",
+  "description": "使用 ffmpeg 进行视频帧提取与片段裁剪",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["video", "ffmpeg", "frame", "media"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "video_path": {
+      "type": "string",
+      "description": "视频文件路径",
+      "required": true
+    },
+    "action": {
+      "type": "string",
+      "description": "操作: extract_frames | trim | convert | info",
+      "required": true
+    },
+    "params": {
+      "type": "object",
+      "description": "操作参数 (时间戳、帧率等)",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "处理结果"
+    }
+  }
+}

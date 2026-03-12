@@ -1,0 +1,35 @@
+{
+  "name": "feishu-perm",
+  "version": "1.0.0",
+  "description": "飞书文档与文件协作者权限管理",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["feishu", "lark", "permission", "security"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "resource": {
+      "type": "string",
+      "description": "资源链接 (文档/文件)",
+      "required": true
+    },
+    "action": {
+      "type": "string",
+      "description": "操作: grant | revoke | list | modify",
+      "required": true
+    },
+    "users": {
+      "type": "array",
+      "description": "用户列表",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "权限操作结果"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "feishu-drive",
+  "version": "1.0.0",
+  "description": "飞书云空间文件目录管理",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["feishu", "lark", "drive", "file"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "action": {
+      "type": "string",
+      "description": "操作类型: list | upload | download | move | delete",
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "description": "云空间路径",
+      "required": true
+    },
+    "file": {
+      "type": "string",
+      "description": "本地文件路径",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "操作结果"
+    }
+  }
+}

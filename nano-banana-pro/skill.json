@@ -1,0 +1,35 @@
+{
+  "name": "nano-banana-pro",
+  "version": "1.0.0",
+  "description": "基于 Gemini 3 Pro Image 的图像生成与局部编辑",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["image", "generation", "ai", "gemini", "multimodal"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "prompt": {
+      "type": "string",
+      "description": "图像生成提示词",
+      "required": true
+    },
+    "action": {
+      "type": "string",
+      "description": "操作: generate | edit | extend | variation",
+      "default": "generate"
+    },
+    "reference_image": {
+      "type": "string",
+      "description": "参考图片路径 (编辑时使用)",
+      "required": false
+    }
+  },
+  "outputs": {
+    "image": {
+      "type": "string",
+      "description": "生成的图片路径或 URL"
+    }
+  }
+}

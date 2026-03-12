@@ -1,0 +1,35 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "实时气象数据与预报查询",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["weather", "forecast", "query", "utility"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "location": {
+      "type": "string",
+      "description": "查询地点 (城市名或坐标)",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "description": "查询类型: current | forecast | hourly",
+      "default": "current"
+    },
+    "days": {
+      "type": "number",
+      "description": "预报天数",
+      "default": 3
+    }
+  },
+  "outputs": {
+    "weather": {
+      "type": "object",
+      "description": "天气数据"
+    }
+  }
+}

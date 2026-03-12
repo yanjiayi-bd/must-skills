@@ -1,0 +1,35 @@
+{
+  "name": "skill-creator",
+  "version": "1.0.0",
+  "description": "能够自行编写、调试并打包新的 AgentSkills 技能",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["skill", "creator", "generator", "meta"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "skill_name": {
+      "type": "string",
+      "description": "新技能名称",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "description": "技能功能描述",
+      "required": true
+    },
+    "features": {
+      "type": "array",
+      "description": "功能特性列表",
+      "required": true
+    }
+  },
+  "outputs": {
+    "skill_package": {
+      "type": "object",
+      "description": "生成的技能包"
+    }
+  }
+}

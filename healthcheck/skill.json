@@ -1,0 +1,30 @@
+{
+  "name": "healthcheck",
+  "version": "1.0.0",
+  "description": "宿主机安全审计、网络暴露面排查与配置加固",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["security", "audit", "health", "system"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "scope": {
+      "type": "string",
+      "description": "检查范围: system | network | security | all",
+      "default": "all"
+    },
+    "detail_level": {
+      "type": "string",
+      "description": "详细程度: basic | standard | deep",
+      "default": "standard"
+    }
+  },
+  "outputs": {
+    "report": {
+      "type": "object",
+      "description": "健康检查报告"
+    }
+  }
+}

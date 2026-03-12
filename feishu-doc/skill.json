@@ -1,0 +1,36 @@
+{
+  "name": "feishu-doc",
+  "version": "1.0.0",
+  "description": "飞书云文档精细化读写与排版操作",
+  "author": "yanjiayi-bd (cloned from clawhub)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["feishu", "lark", "document", "office"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "action": {
+      "type": "string",
+      "description": "操作类型: read | write | edit | format",
+      "required": true,
+      "enum": ["read", "write", "edit", "format"]
+    },
+    "doc_url": {
+      "type": "string",
+      "description": "飞书文档链接或 ID",
+      "required": true
+    },
+    "content": {
+      "type": "object",
+      "description": "文档内容或修改数据",
+      "required": false
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "操作结果"
+    }
+  }
+}
