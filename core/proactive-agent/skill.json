@@ -1,17 +1,18 @@
 {
   "name": "proactive-agent",
   "version": "1.0.0",
-  "description": "Proactive AI",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: halthelobster)",
+  "description": "Proactive AI - autonomous task execution agent that anticipates user needs",
+  "homepage": "https://clawhub.ai",
+  "author": "halthelobster (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["proactive", "autonomous", "agent", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🤖"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }
