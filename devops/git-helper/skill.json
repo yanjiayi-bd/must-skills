@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["git", "version-control", "branch", "merge"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🌿"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["openclaw", "evaluation", "cognition", "engineering", "assessment"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎓"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

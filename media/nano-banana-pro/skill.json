@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["image", "generation", "ai", "gemini", "multimodal"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎨"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

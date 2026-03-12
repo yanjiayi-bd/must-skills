@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["task", "planning", "management", "productivity"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📅"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

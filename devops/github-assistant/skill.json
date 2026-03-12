@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["github", "git", "devops", "code"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🐙"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

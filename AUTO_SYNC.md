@@ -10,7 +10,8 @@
 2. **自动学习** 新技能并安装到 OpenClaw
 3. **版本检查** 已学习技能的更新
 4. **自动复刻** 到 must-skills GitHub 仓库
-5. **生成报告** 每周学习进度报告
+5. **完整性检查** 验证技能文件完整性
+6. **生成报告** 每周学习进度报告
 
 ## 🏗️ 系统架构
 
@@ -31,6 +32,12 @@
 │  │  OpenClaw    │    │ .skill-track │                       │
 │  │   Install    │    │   .json      │                       │
 │  └──────────────┘    └──────────────┘                       │
+│         │                                                   │
+│         ▼                                                   │
+│  ┌──────────────┐                                           │
+│  │ INTEGRITY_   │                                           │
+│  │ REPORT.md    │                                           │
+│  └──────────────┘                                           │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -44,6 +51,64 @@
 | `scripts/setup.sh` | 系统安装脚本 |
 | `scripts/crontab.txt` | 定时任务配置 |
 | `.skill-track.json` | 技能版本追踪数据库 |
+| `INTEGRITY_REPORT.md` | 完整性检查报告 |
+
+## ✅ 完整性检查规则
+
+每次同步运行时，系统会自动检查所有技能的完整性：
+
+### 检查项
+
+| 规则 | 说明 | 优先级 |
+|------|------|--------|
+| **metadata.emoji** | skill.json 必须包含 `metadata.clawdbot.emoji` | 🔴 必须 |
+| **原始作者标注** | 复刻技能必须保留原始作者信息 | 🔴 必须 |
+| **inputs/outputs** | Top 10 技能应有完整的输入输出定义 | 🟡 建议 |
+| **prompt.md 详细度** | prompt.md 应包含使用示例和输出格式 | 🟡 建议 |
+
+### 检查示例
+
+```bash
+$ python3 scripts/clawhub_sync.py
+[ integrity check ] 运行技能完整性检查...
+✓ 技能 gog 完整
+✓ 技能 self-improving-agent 完整
+⚠ 技能 find-skills 不完整:
+  - 缺少 metadata.clawdbot.emoji
+  - prompt.md 内容过于简单 (120 字符)
+✓ 技能 summarize 完整
+...
+完整性检查完成: 30/33 技能完整
+```
+
+### 完整性报告
+
+自动生成 `INTEGRITY_REPORT.md`：
+
+```markdown
+# Skill 完整性检查报告
+
+## 统计
+- 总技能数: 33
+- 完整技能: 30
+- 不完整技能: 3
+- 完整率: 90.9%
+
+## 需要完善的技能
+
+### find-skills (core/find-skills)
+- [ ] 缺少 metadata.clawdbot.emoji
+- [ ] prompt.md 内容过于简单 (120 字符)
+
+### weather (utils/weather)
+- [ ] 缺少完整的 inputs 定义
+
+## 检查规则
+1. skill.json 必须包含 `metadata.clawdbot.emoji`
+2. 复刻技能必须明确标注原始作者
+3. Top 10 技能应有完整的 inputs/outputs 定义
+4. prompt.md 应包含详细的使用说明和示例
+```
 
 ## 🚀 快速开始
 

@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["file", "filesystem", "management", "batch"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📁"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

@@ -6,6 +6,14 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["video", "ffmpeg", "frame", "media"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎬",
+      "requires": {
+        "bins": ["ffmpeg"]
+      }
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

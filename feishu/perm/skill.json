@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["feishu", "lark", "permission", "security"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔒"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

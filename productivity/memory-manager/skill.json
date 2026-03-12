@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["memory", "storage", "retrieval", "context"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🧠"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

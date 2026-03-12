@@ -2,6 +2,13 @@
 """
 ClawHub Top 10 Skills Auto Sync Manager
 每周自动学习、安装、复刻 ClawHub 热门技能
+
+完整性检查规则:
+1. skill.json 必须包含 metadata.clawdbot.emoji
+2. skill.json 如有需要应包含 metadata.clawdbot.requires (bins/env)
+3. prompt.md 必须包含具体的使用示例和输出格式
+4. 复刻的技能必须保留原始作者信息
+5. 所有技能必须有完整的 inputs/outputs 定义
 """
 
 import json
@@ -159,6 +166,150 @@ class SkillSyncManager:
         self.new_skills = []
         self.updated_skills = []
         self.skipped_skills = []
+        self.incomplete_skills = []  # 记录不完整的技能
+    
+    def check_skill_integrity(self, skill_path: Path) -> Tuple[bool, List[str]]:
+        """
+        检查技能完整性
+        
+        返回: (是否完整, 问题列表)
+        """
+        issues = []
+        
+        # 检查必要文件
+        skill_json = skill_path / "skill.json"
+        prompt_md = skill_path / "prompt.md"
+        
+        if not skill_json.exists():
+            issues.append("缺少 skill.json")
+            return False, issues
+        
+        if not prompt_md.exists():
+            issues.append("缺少 prompt.md")
+            return False, issues
+        
+        # 读取 skill.json
+        try:
+            with open(skill_json, "r") as f:
+                data = json.load(f)
+        except json.JSONDecodeError as e:
+            issues.append(f"skill.json 格式错误: {e}")
+            return False, issues
+        
+        # 检查 1: metadata.clawdbot.emoji 必须存在
+        metadata = data.get("metadata", {})
+        clawdbot = metadata.get("clawdbot", {})
+        if not clawdbot.get("emoji"):
+            issues.append("缺少 metadata.clawdbot.emoji")
+        
+        # 检查 2: 复刻技能必须保留原始作者信息
+        author = data.get("author", "")
+        if "cloned" in author.lower() or "auto-sync" in author.lower():
+            if "original" not in author.lower() and "cloned from" not in author.lower():
+                issues.append("复刻技能应明确标注原始作者 (格式: 'cloned by X, original: Y')")
+        
+        # 检查 3: 完整的 inputs/outputs 定义（不应为空对象）
+        inputs = data.get("inputs", {})
+        outputs = data.get("outputs", {})
+        
+        # Top 10 技能应该有具体的 inputs/outputs
+        skill_name = data.get("name", "")
+        top10_names = [s["name"] for s in CLAWHUB_TOP10_TEMPLATE]
+        if skill_name in top10_names:
+            if not inputs or inputs == {}:
+                issues.append("Top 10 技能应有完整的 inputs 定义")
+            if not outputs or outputs == {}:
+                issues.append("Top 10 技能应有完整的 outputs 定义")
+        
+        # 检查 4: prompt.md 内容完整性
+        try:
+            with open(prompt_md, "r") as f:
+                prompt_content = f.read()
+            
+            # 检查是否有具体的使用示例
+            if "## 使用" not in prompt_content and "## Usage" not in prompt_content and "## 功能" not in prompt_content:
+                # 如果不在 Top 10，可以放宽要求
+                if skill_name in top10_names:
+                    issues.append("prompt.md 应包含使用说明或功能描述")
+            
+            # 检查内容是否过于简单（少于 200 字符）
+            if len(prompt_content) < 200:
+                issues.append(f"prompt.md 内容过于简单 ({len(prompt_content)} 字符)，应包含详细说明")
+                
+        except Exception as e:
+            issues.append(f"读取 prompt.md 失败: {e}")
+        
+        return len(issues) == 0, issues
+    
+    def run_integrity_check(self) -> Dict:
+        """
+        运行完整性检查
+        
+        返回: {"total": N, "complete": N, "incomplete": N, "details": [...]}
+        """
+        self.logger.info("运行技能完整性检查...")
+        
+        results = {
+            "total": 0,
+            "complete": 0,
+            "incomplete": 0,
+            "details": []
+        }
+        
+        # 遍历所有技能目录
+        for category_dir in MUST_SKILLS_DIR.iterdir():
+            if not category_dir.is_dir() or category_dir.name.startswith("."):
+                continue
+            
+            for skill_dir in category_dir.iterdir():
+                if not skill_dir.is_dir():
+                    continue
+                
+                results["total"] += 1
+                skill_name = skill_dir.name
+                
+                is_complete, issues = self.check_skill_integrity(skill_dir)
+                
+                if is_complete:
+                    results["complete"] += 1
+                else:
+                    results["incomplete"] += 1
+                    results["details"].append({
+                        "name": skill_name,
+                        "path": str(skill_dir.relative_to(MUST_SKILLS_DIR)),
+                        "issues": issues
+                    })
+                    self.logger.warning(f"技能 {skill_name} 不完整: {', '.join(issues)}")
+        
+        self.logger.info(f"完整性检查完成: {results['complete']}/{results['total']} 技能完整")
+        return results
+    
+    def generate_integrity_report(self, results: Dict) -> str:
+        """生成完整性检查报告"""
+        report_lines = [
+            "# Skill 完整性检查报告",
+            f"\n生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            f"\n## 统计",
+            f"- 总技能数: {results['total']}",
+            f"- 完整技能: {results['complete']}",
+            f"- 不完整技能: {results['incomplete']}",
+            f"- 完整率: {results['complete']/results['total']*100:.1f}%" if results['total'] > 0 else "- 完整率: N/A",
+        ]
+        
+        if results["incomplete"] > 0:
+            report_lines.append("\n## 需要完善的技能")
+            for detail in results["details"]:
+                report_lines.append(f"\n### {detail['name']} ({detail['path']})")
+                for issue in detail["issues"]:
+                    report_lines.append(f"- [ ] {issue}")
+        
+        report_lines.append("\n## 检查规则")
+        report_lines.append("1. skill.json 必须包含 `metadata.clawdbot.emoji`")
+        report_lines.append("2. 复刻技能必须明确标注原始作者")
+        report_lines.append("3. Top 10 技能应有完整的 inputs/outputs 定义")
+        report_lines.append("4. prompt.md 应包含详细的使用说明和示例")
+        
+        return "\n".join(report_lines)
     
     def fetch_clawhub_top10(self) -> List[Dict]:
         """
@@ -316,9 +467,13 @@ Weekly sync summary:
 - New learned: {len(self.new_skills)}
 - Updated: {len(self.updated_skills)}
 - Skipped: {len(self.skipped_skills)}
+- Incomplete skills: {len(self.incomplete_skills)}
 
 Skills:
 {chr(10).join(f"- {s['name']} (v{s['version']})" for s in self.new_skills + self.updated_skills)}
+
+Integrity Check:
+- See INTEGRITY_REPORT.md for details
 """
             
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
@@ -340,7 +495,22 @@ Skills:
         self.logger.info("启动 ClawHub Top 10 技能同步")
         self.logger.info("=" * 50)
         
-        # 获取 Top 10 技能
+        # 第 1 步: 完整性检查
+        integrity_results = self.run_integrity_check()
+        
+        # 生成并保存完整性报告
+        report = self.generate_integrity_report(integrity_results)
+        report_path = MUST_SKILLS_DIR / "INTEGRITY_REPORT.md"
+        with open(report_path, "w") as f:
+            f.write(report)
+        self.logger.info(f"完整性报告已保存: {report_path}")
+        
+        # 如果有不完整的技能，记录到追踪器
+        if integrity_results["incomplete"] > 0:
+            self.incomplete_skills = integrity_results["details"]
+            self.logger.warning(f"发现 {len(self.incomplete_skills)} 个不完整的技能需要完善")
+        
+        # 第 2 步: 获取 Top 10 技能
         top10 = self.fetch_clawhub_top10()
         
         # 处理每个技能
@@ -409,8 +579,11 @@ Skills:
         self.logger.info(f"  本次新学习: {len(self.new_skills)}")
         self.logger.info(f"  本次更新: {len(self.updated_skills)}")
         self.logger.info(f"  本次跳过: {len(self.skipped_skills)}")
+        self.logger.info(f"  不完整技能: {len(self.incomplete_skills)}")
         self.logger.info(f"  累计学习: {stats['total_learned']}")
         self.logger.info(f"  累计更新: {stats['total_updated']}")
+        if self.incomplete_skills:
+            self.logger.info(f"  查看 INTEGRITY_REPORT.md 了解需要完善的技能")
         self.logger.info("=" * 50)
 
 

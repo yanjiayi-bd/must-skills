@@ -6,6 +6,14 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["security", "password", "vault", "secret"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔐",
+      "requires": {
+        "bins": ["op"]
+      }
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

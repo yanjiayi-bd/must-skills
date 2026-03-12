@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["doc", "documentation", "generator", "markdown"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📝"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

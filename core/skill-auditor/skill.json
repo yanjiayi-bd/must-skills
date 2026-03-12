@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["audit", "security", "scan", "skill"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔍"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },

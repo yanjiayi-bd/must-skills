@@ -6,6 +6,11 @@
   "license": "MIT",
   "type": "skill",
   "tags": ["code", "review", "quality", "analysis"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "👀"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
   },
