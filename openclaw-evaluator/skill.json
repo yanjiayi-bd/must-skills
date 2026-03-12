@@ -1,0 +1,35 @@
+{
+  "name": "openclaw-evaluator",
+  "version": "1.0.0",
+  "description": "OpenClaw 认知与工程能力等级鉴定专家 - 评估 Agent 认知深度与工程稳定性",
+  "author": "yanjiayi-bd",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["openclaw", "evaluation", "cognition", "engineering", "assessment"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "agent_config": {
+      "type": "object",
+      "description": "Agent 配置信息 (openclaw.json 或配置摘要)",
+      "required": true
+    },
+    "execution_logs": {
+      "type": "array",
+      "description": "执行日志样本 (最近 10-20 条任务记录)",
+      "required": true
+    },
+    "stress_test_cases": {
+      "type": "array",
+      "description": "压力测试案例及表现 (可选)",
+      "required": false
+    }
+  },
+  "outputs": {
+    "evaluation_report": {
+      "type": "object",
+      "description": "完整的等级鉴定报告"
+    }
+  }
+}
