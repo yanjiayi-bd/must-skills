@@ -1,0 +1,30 @@
+{
+  "name": "self-improving-agent",
+  "version": "1.0.0",
+  "description": "记录学习心得、错误与修正，推动持续改进的自我进化代理",
+  "author": "yanjiayi-bd (cloned from clawhub top2)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["self-improvement", "learning", "memory", "evolution"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "action": {
+      "type": "string",
+      "description": "操作: learn | reflect | fix | review",
+      "required": true
+    },
+    "content": {
+      "type": "string",
+      "description": "学习内容或错误描述",
+      "required": false
+    }
+  },
+  "outputs": {
+    "improvement": {
+      "type": "object",
+      "description": "改进建议"
+    }
+  }
+}

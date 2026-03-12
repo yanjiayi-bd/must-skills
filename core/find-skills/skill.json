@@ -1,0 +1,30 @@
+{
+  "name": "find-skills",
+  "version": "1.0.0",
+  "description": "帮助用户发现并安装 OpenClaw Skills 的元技能",
+  "author": "yanjiayi-bd (cloned from clawhub top5)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["skills", "discovery", "search", "meta"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "query": {
+      "type": "string",
+      "description": "搜索关键词",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "description": "分类筛选",
+      "required": false
+    }
+  },
+  "outputs": {
+    "skills": {
+      "type": "array",
+      "description": "匹配的技能列表"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "使用 gh CLI 与 GitHub 交互，支持仓库、PR、Issue 管理",
+  "author": "yanjiayi-bd (cloned from clawhub top7)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["github", "git", "cli", "devops"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "command": {
+      "type": "string",
+      "description": "gh 子命令: repo | pr | issue | workflow | release",
+      "required": true
+    },
+    "action": {
+      "type": "string",
+      "description": "操作类型",
+      "required": true
+    },
+    "args": {
+      "type": "object",
+      "description": "命令参数",
+      "default": {}
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "object",
+      "description": "命令执行结果"
+    }
+  }
+}

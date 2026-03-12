@@ -1,0 +1,30 @@
+{
+  "name": "proactive-agent",
+  "version": "1.0.0",
+  "description": "将 AI 智能体从任务执行者转变为能预见需求、持续优化的主动伙伴",
+  "author": "yanjiayi-bd (cloned from clawhub top10)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["proactive", "agent", "automation", "ai"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "mode": {
+      "type": "string",
+      "description": "模式: observe | predict | act | optimize",
+      "required": true
+    },
+    "context": {
+      "type": "object",
+      "description": "上下文信息",
+      "default": {}
+    }
+  },
+  "outputs": {
+    "action": {
+      "type": "object",
+      "description": "主动执行的操作"
+    }
+  }
+}

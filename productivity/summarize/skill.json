@@ -1,0 +1,35 @@
+{
+  "name": "summarize",
+  "version": "1.0.0",
+  "description": "汇总网址或文件（网页、PDF、图片、音频、YouTube 视频）",
+  "author": "yanjiayi-bd (cloned from clawhub top6)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["summarize", "content", "extraction", "nlp"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "source": {
+      "type": "string",
+      "description": "URL 或文件路径",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "description": "内容类型: auto | web | pdf | image | audio | video",
+      "default": "auto"
+    },
+    "length": {
+      "type": "string",
+      "description": "摘要长度: short | medium | long",
+      "default": "medium"
+    }
+  },
+  "outputs": {
+    "summary": {
+      "type": "object",
+      "description": "摘要结果"
+    }
+  }
+}

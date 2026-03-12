@@ -1,0 +1,35 @@
+{
+  "name": "tavily-search",
+  "version": "1.0.0",
+  "description": "通过 Tavily API 实现 AI 优化的网络搜索，精准无广告",
+  "author": "yanjiayi-bd (cloned from clawhub top3)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["search", "web", "tavily", "ai-search", "research"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "query": {
+      "type": "string",
+      "description": "搜索查询",
+      "required": true
+    },
+    "depth": {
+      "type": "string",
+      "description": "搜索深度: basic | advanced",
+      "default": "basic"
+    },
+    "max_results": {
+      "type": "number",
+      "description": "最大结果数",
+      "default": 5
+    }
+  },
+  "outputs": {
+    "results": {
+      "type": "array",
+      "description": "搜索结果列表"
+    }
+  }
+}

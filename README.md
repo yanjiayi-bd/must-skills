@@ -1,22 +1,46 @@
 # Must-Skills for OpenClaw
 
-精选 OpenClaw 高价值技能集合，按功能分类组织，便于查找和使用。
+精选 OpenClaw 高价值技能集合，按功能分类组织，包含 **ClawHub Top 10 热门技能复刻**。
+
+## 🔥 ClawHub Top 10 热门技能
+
+> 复刻自 [ClawHub](https://clawhub.ai) 官方热门榜单，按下载量排序
+
+| 排名 | 技能 | 分类 | 描述 | 作者来源 |
+|-----|------|------|------|---------|
+| 1 | **gog** | productivity | Google Workspace 命令行工具 (Gmail/日历/云端硬盘/通讯录/表格/文档) | Peter Steinberger |
+| 2 | **self-improving-agent** | core | 记录学习心得、错误与修正，推动持续改进 | pskoett |
+| 3 | **tavily-search** | productivity | 通过 Tavily API 实现 AI 优化的网络搜索，精准无广告 | arun-8687 |
+| 4 | **ontology** | core | 为结构化智能体记忆与可组合技能构建的类型化知识图谱 | oswalpalash |
+| 5 | **find-skills** | core | 帮助用户发现并安装 skills 的元技能 | JimLiuxinghai |
+| 6 | **summarize** | productivity | 汇总网址或文件（网页、PDF、图片、音频、YouTube 视频） | Peter Steinberger |
+| 7 | **github** | devops | 使用 `gh` CLI 与 GitHub 交互 | Peter Steinberger |
+| 8 | **sonoscli** | media | 控制 Sonos 音箱 | Peter Steinberger |
+| 9 | **weather** | utils | 获取实时天气与预报（无需 API 密钥） | Peter Steinberger |
+| 10 | **proactive-agent** | core | 将 AI 从任务执行者转变为能预见需求的主动伙伴 | halthelobster |
+| 11 | **api-gateway** | devops | 通过托管的 OAuth 连接 100+ API | byungkyu |
 
 ## 📁 目录结构
 
 ```
 must-skills/
 ├── README.md
-├── core/                    # 核心评估工具
+├── core/                    # 核心评估工具 + 元技能
 │   ├── skill-auditor/       # 技能合规性审计
 │   ├── skill-evaluator/     # 技能效果评估
-│   └── openclaw-evaluator/  # OpenClaw 系统评估
+│   ├── openclaw-evaluator/  # OpenClaw 系统评估
+│   ├── self-improving-agent/# ⭐ 自我改进代理
+│   ├── ontology/            # ⭐ 知识图谱
+│   ├── find-skills/         # ⭐ 技能发现
+│   └── proactive-agent/     # ⭐ 主动式代理
 ├── feishu/                  # 飞书生态集成
 │   ├── doc/                 # 飞书云文档协作
 │   ├── drive/               # 飞书云盘文件操作
 │   ├── wiki/                # 飞书知识库管理
 │   └── perm/                # 飞书权限与安全控制
 ├── devops/                  # 开发运维
+│   ├── github/              # ⭐ GitHub CLI 交互
+│   ├── api-gateway/         # ⭐ API 网关
 │   ├── github-assistant/    # GitHub 自动化助手
 │   ├── git-helper/          # Git 操作辅助
 │   ├── code-reviewer/       # 代码审查
@@ -25,9 +49,13 @@ must-skills/
 │   ├── healthcheck/         # 系统健康检查
 │   └── 1password/           # 1Password 凭证管理
 ├── media/                   # 多媒体处理
-│   ├── nano-banana-pro/     # Gemini 图像生成
-│   └── video-frames/        # FFmpeg 视频转图片
+│   ├── sonoscli/            # ⭐ Sonos 音箱控制
+│   ├── nano-banana-pro/     # AI 图像生成
+│   └── video-frames/        # 视频转图片
 ├── productivity/            # 生产力工具
+│   ├── gog/                 # ⭐ Google Workspace CLI
+│   ├── tavily-search/       # ⭐ AI 网络搜索
+│   ├── summarize/           # ⭐ 内容总结
 │   ├── task-planner/        # 任务规划器
 │   ├── memory-manager/      # 记忆管理
 │   ├── doc-generator/       # 文档生成器
@@ -35,217 +63,142 @@ must-skills/
 │   └── web-search/          # 网页搜索
 └── utils/                   # 基础工具
     ├── skill-creator/       # 技能创建器
-    └── weather/             # 天气查询
+    └── weather/             # ⭐ 天气查询
 ```
 
-## 📊 技能矩阵
+## 📊 技能统计
 
-### Core - 核心评估
+| 分类 | 技能数 | 热门技能 |
+|------|--------|---------|
+| core | 7 | self-improving-agent, ontology, find-skills, proactive-agent |
+| feishu | 4 | doc, drive, wiki, perm |
+| devops | 9 | github, api-gateway |
+| media | 3 | sonoscli |
+| productivity | 8 | gog, tavily-search, summarize |
+| utils | 2 | weather |
 
-| 技能 | 描述 | 用途 |
-|------|------|------|
-| `skill-auditor` | 技能合规性审计 | 检查技能是否符合规范 |
-| `skill-evaluator` | 技能效果评估 | 评估技能执行质量 |
-| `openclaw-evaluator` | OpenClaw 系统评估 | 系统级性能评估 |
-
-### Feishu - 飞书生态
-
-| 技能 | 描述 | 用途 |
-|------|------|------|
-| `doc` | 飞书云文档协作 | 文档创建、编辑、协作 |
-| `drive` | 飞书云盘文件操作 | 文件上传、下载、管理 |
-| `wiki` | 飞书知识库管理 | 知识库浏览、搜索、编辑 |
-| `perm` | 飞书权限管理 | 权限配置、安全审计 |
-
-### DevOps - 开发运维
-
-| 技能 | 描述 | 用途 |
-|------|------|------|
-| `github-assistant` | GitHub 自动化 | PR、Issue、Actions 管理 |
-| `git-helper` | Git 操作辅助 | 分支、提交、合并辅助 |
-| `code-reviewer` | 代码审查 | 自动化代码检查 |
-| `api-tester` | API 接口测试 | 接口测试与文档生成 |
-| `log-analyzer` | 日志分析 | 日志解析与问题定位 |
-| `healthcheck` | 系统健康检查 | 服务状态监控 |
-| `1password` | 1Password 集成 | 凭证管理与安全访问 |
-
-### Media - 多媒体
-
-| 技能 | 描述 | 用途 |
-|------|------|------|
-| `nano-banana-pro` | AI 图像生成 | Gemini 文生图 |
-| `video-frames` | 视频处理 | 视频转图片序列 |
-
-### Productivity - 生产力
-
-| 技能 | 描述 | 用途 |
-|------|------|------|
-| `task-planner` | 任务规划 | 智能任务分解与排期 |
-| `memory-manager` | 记忆管理 | 对话记忆持久化 |
-| `doc-generator` | 文档生成 | 自动化文档创建 |
-| `file-manager` | 文件管理 | 文件操作与组织 |
-| `web-search` | 网页搜索 | 实时信息检索 |
-
-### Utils - 基础工具
-
-| 技能 | 描述 | 用途 |
-|------|------|------|
-| `skill-creator` | 技能创建器 | 快速创建新技能 |
-| `weather` | 天气查询 | 实时天气与预报 |
+**总计: 33 个技能**
 
 ## 🚀 快速开始
 
-### 安装单个分类的所有技能
+### 安装 Top 10 热门技能
 
 ```bash
-# 安装所有飞书技能
-for skill in must-skills/feishu/*/; do
+# 一键安装所有热门技能
+for skill in gog self-improving-agent tavily-search ontology find-skills summarize github sonoscli weather proactive-agent api-gateway; do
+  openclaw skills install ./must-skills/*/$skill 2>/dev/null || openclaw skills install ./must-skills/*/*/$skill 2>/dev/null
+done
+```
+
+### 分类批量安装
+
+```bash
+# 安装核心工具
+for skill in must-skills/core/*/; do
   openclaw skills install "$skill"
 done
 
-# 安装所有 DevOps 技能
-for skill in must-skills/devops/*/; do
+# 安装生产力工具
+for skill in must-skills/productivity/*/; do
   openclaw skills install "$skill"
 done
 ```
 
-### 安装单个技能
+### 使用示例
 
 ```bash
-openclaw skills install ./must-skills/utils/weather
-openclaw skills install ./must-skills/feishu/doc
-openclaw skills install ./must-skills/devops/healthcheck
-```
+# Top 1: Google Workspace
+gog gmail list --limit 10
+gog calendar add "Meeting" --start "14:00"
 
-### 使用技能
+# Top 3: AI 搜索
+tavily-search --query "OpenClaw 最新动态" --depth advanced
 
-```bash
-# 查看已安装技能
-openclaw skills list
+# Top 6: 内容总结
+summarize --source "https://example.com/article" --length medium
 
-# 运行技能
-openclaw skills run weather --input location="北京"
-openclaw skills run feishu/doc --input action="list"
-openclaw skills run devops/healthcheck --input target="all"
+# Top 7: GitHub
+github pr list
+github issue create --title "Bug" --label bug
+
+# Top 9: 天气
+weather --location "北京" --days 3
 ```
 
 ## 🎯 使用场景
 
-### 场景 1：飞书办公自动化
+### 场景 1: 智能办公自动化
 
 ```bash
-# 批量导出部门文档
-openclaw skills run feishu/doc --input action="export" --input folder="项目文档"
-
-# 设置团队权限
-openclaw skills run feishu/perm --input action="grant" --input user="team@company.com"
-
-# 搜索知识库
-openclaw skills run feishu/wiki --input action="search" --input query="API 规范"
+# 搜索资料 → 总结内容 → 创建文档 → 发送邮件
+tavily-search --query "AI 行业趋势 2025" | \
+summarize --length long | \
+gog docs create --title "AI趋势报告" | \
+gog gmail send --to "boss@company.com" --subject "本周报告"
 ```
 
-### 场景 2：DevOps 日常运维
+### 场景 2: 开发工作流
 
 ```bash
-# 系统健康检查
-openclaw skills run devops/healthcheck --input target="all" --input notify=true
-
-# 获取生产环境凭证
-openclaw skills run devops/1password --input action="get" --input item="prod-db"
-
-# 分析应用日志
-openclaw skills run devops/log-analyzer --input file="/var/log/app.log"
-
-# 代码审查
-openclaw skills run devops/code-reviewer --input path="./src"
+# 代码审查 → 创建 PR → 运行测试
+code-reviewer --path ./src | \
+github pr create --title "Feature: xxx" | \
+api-tester --run
 ```
 
-### 场景 3：内容创作
+### 场景 3: 智能家居
 
 ```bash
-# 生成配图
-openclaw skills run media/nano-banana-pro --input prompt="科技感办公场景"
-
-# 提取视频封面
-openclaw skills run media/video-frames --input video="demo.mp4" --input frame="00:00:05"
-
-# 搜索素材
-openclaw skills run productivity/web-search --input query="2024 设计趋势"
-```
-
-### 场景 4：项目管理
-
-```bash
-# 创建任务计划
-openclaw skills run productivity/task-planner --input goal="上线新功能"
-
-# 生成项目文档
-openclaw skills run productivity/doc-generator --input type="api"
-
-# 管理项目文件
-openclaw skills run productivity/file-manager --input action="organize"
+# 天气查询 → 调整音箱 → 发送提醒
+weather --location "上海" | \
+sonoscli --room "客厅" --action play --playlist "轻音乐"
 ```
 
 ## 🔧 配置指南
 
-### Feishu 集成
-
-在 `openclaw.json` 中配置：
-
-```json
-{
-  "channels": {
-    "feishu": {
-      "enabled": true,
-      "appId": "cli_xxxxx",
-      "appSecret": "your-secret"
-    }
-  }
-}
+### Google Workspace (gog)
+```bash
+# 需要配置 Google OAuth 凭证
+gcloud auth application-default login
 ```
 
-### 1Password 集成
-
+### Tavily Search
 ```bash
-# 安装 1Password CLI
-brew install 1password-cli
-
-# 登录
-op account add --address my.1password.com --email user@example.com
+export TAVILY_API_KEY="your-api-key"
 ```
 
-### Gemini API
-
+### GitHub
 ```bash
-export GEMINI_API_KEY="your-api-key"
+gh auth login
 ```
 
-## 🤝 贡献指南
+### Sonos
+```bash
+# 自动发现局域网内 Sonos 设备
+sonoscli discover
+```
 
-欢迎提交新的技能！请按以下步骤：
+## 🤝 贡献
 
-1. **选择分类**：根据功能选择合适的分类目录
-2. **创建技能**：每个技能一个独立子目录
-3. **必需文件**：
-   - `skill.json` - 技能配置
-   - `prompt.md` - 提示词定义
-4. **可选文件**：
-   - `README.md` - 详细说明
-   - `examples/` - 使用示例
+欢迎贡献新的技能！请按功能分类放置在对应目录。
 
 ```bash
-# 示例：提交新的 DevOps 技能
-git checkout -b feature/new-devops-skill
-mkdir -p must-skills/devops/my-skill
-cp skill.json prompt.md must-skills/devops/my-skill/
-git add must-skills/devops/my-skill/
-git commit -m "feat(devops): add my-skill for ..."
-git push origin feature/new-devops-skill
+# 提交新技能
+git checkout -b feature/my-skill
+git add must-skills/category/my-skill/
+git commit -m "feat(category): add my-skill"
+git push origin feature/my-skill
 ```
 
 ## 📄 许可证
 
-MIT License - 详见 [LICENSE](../LICENSE)
+MIT License
+
+## 🙏 致谢
+
+- [ClawHub](https://clawhub.ai) - 官方技能市场
+- [Awesome OpenClaw Skills](https://github.com/VoltAgent/awesome-openclaw-skills) - 社区技能索引
+- OpenClaw 创始人 Peter Steinberger 及所有技能作者
 
 ---
 

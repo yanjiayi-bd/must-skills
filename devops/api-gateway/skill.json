@@ -1,0 +1,40 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "通过托管的 OAuth 连接 100+ API（Google Workspace、Microsoft 365、Notion、Slack 等）",
+  "author": "yanjiayi-bd (cloned from clawhub top11)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["api", "gateway", "oauth", "integration"],
+  "entry": {
+    "prompt": "prompt.md"
+  },
+  "inputs": {
+    "service": {
+      "type": "string",
+      "description": "服务名称: google | microsoft | notion | slack | ...",
+      "required": true
+    },
+    "endpoint": {
+      "type": "string",
+      "description": "API 端点",
+      "required": true
+    },
+    "method": {
+      "type": "string",
+      "description": "HTTP 方法: GET | POST | PUT | DELETE",
+      "default": "GET"
+    },
+    "data": {
+      "type": "object",
+      "description": "请求数据",
+      "default": {}
+    }
+  },
+  "outputs": {
+    "response": {
+      "type": "object",
+      "description": "API 响应"
+    }
+  }
+}
