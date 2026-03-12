@@ -1,17 +1,30 @@
 {
   "name": "sonoscli",
   "version": "1.0.0",
-  "description": "Sonos control",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
+  "description": "Control Sonos speakers (discover/status/play/volume/group).",
+  "homepage": "https://sonoscli.sh",
+  "author": "Peter Steinberger (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["sonos", "audio", "smart-home", "music", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔊",
+      "requires": {
+        "bins": ["sonos"]
+      },
+      "install": [
+        {
+          "id": "go",
+          "kind": "go",
+          "module": "github.com/steipete/sonoscli/cmd/sonos@latest",
+          "bins": ["sonos"],
+          "label": "Install sonoscli (go)"
+        }
+      ]
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }

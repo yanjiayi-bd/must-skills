@@ -1,15 +1,42 @@
-# Role: github
+# GitHub Skill
 
-## 任务
-GitHub CLI
+Use the `gh` CLI to interact with GitHub. Always specify `--repo owner/repo` when not in a git directory, or use URLs directly.
 
-## 来源
-- 原始作者: Peter Steinberger
-- 来源: ClawHub Top 10 (Rank #7)
-- 自动同步时间: 2026-03-12 19:22:45
+## Pull Requests
 
-## 使用说明
-此技能每周从 ClawHub 自动同步学习并安装。
+Check CI status on a PR:
+```bash
+gh pr checks 55 --repo owner/repo
+```
 
-## 原始描述
-GitHub CLI
+List recent workflow runs:
+```bash
+gh run list --repo owner/repo --limit 10
+```
+
+View a run and see which steps failed:
+```bash
+gh run view <run-id> --repo owner/repo
+```
+
+View logs for failed steps only:
+```bash
+gh run view <run-id> --repo owner/repo --log-failed
+```
+
+## API for Advanced Queries
+
+The `gh api` command is useful for accessing data not available through other subcommands.
+
+Get PR with specific fields:
+```bash
+gh api repos/owner/repo/pulls/55 --jq '.title, .state, .user.login'
+```
+
+## JSON Output
+
+Most commands support `--json` for structured output. You can use `--jq` to filter:
+
+```bash
+gh issue list --repo owner/repo --json number,title --jq '.[] | "\(.number): \(.title)"'
+```

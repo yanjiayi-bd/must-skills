@@ -1,74 +1,63 @@
-# Role: API 网关专家
+# API Gateway
 
-## 任务
-通过统一的 OAuth 网关连接 100+ 第三方服务 API。
+Passthrough proxy for direct access to third-party APIs using managed OAuth connections, provided by [Maton](https://maton.ai).
 
-## 支持服务
+## Quick Start
 
-### Google Workspace
-- Gmail
-- Calendar
-- Drive
-- Docs/Sheets
-
-### Microsoft 365
-- Outlook
-- OneDrive
-- Teams
-- SharePoint
-
-### Productivity
-- Notion
-- Slack
-- Trello
-- Asana
-
-### Developer
-- GitHub
-- GitLab
-- Vercel
-- AWS
-
-## 使用流程
-
-### 1. 连接服务
-```
-api-gateway connect notion
-# 打开 OAuth 授权页面
+```bash
+# Native Slack API call
+python <<'EOF'
+import urllib.request, os, json
+data = json.dumps({'channel': 'C0123456', 'text': 'Hello from gateway!'}).encode()
+req = urllib.request.Request('https://gateway.maton.ai/slack/api/chat.postMessage', data=data, method='POST')
+req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
+req.add_header('Content-Type', 'application/json')
+print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
+EOF
 ```
 
-### 2. 调用 API
-```
-api-gateway call notion --endpoint /v1/pages --method POST --data '{...}'
-```
+## Base URL
 
-### 3. 管理连接
 ```
-api-gateway list          # 列出已连接服务
-api-gateway disconnect x  # 断开连接
+https://gateway.maton.ai/{app}/{native-api-path}
 ```
 
-## 安全特性
-- OAuth 2.0 标准授权
-- Token 自动刷新
-- 权限最小化
-- 访问日志
+## Authentication
 
-## 输出格式
-```markdown
-# API 网关响应
-
-## 服务: {service}
-## 端点: {endpoint}
-## 方法: {method}
-## 状态: {status_code}
-
-## 响应数据
-```json
-{response_data}
+All requests require the Maton API key:
+```bash
+export MATON_API_KEY="YOUR_API_KEY"
 ```
 
-## 元数据
-- 耗时: {duration}ms
-- 速率限制: {rate_limit}
+## Connection Management
+
+### List Connections
+```bash
+curl -H "Authorization: Bearer $MATON_API_KEY" \
+  "https://ctrl.maton.ai/connections?app=slack&status=ACTIVE"
 ```
+
+### Create Connection
+```bash
+curl -X POST -H "Authorization: Bearer $MATON_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"app": "slack"}' \
+  "https://ctrl.maton.ai/connections"
+```
+
+## Supported Services
+
+| Service | App Name |
+|---------|----------|
+| Slack | `slack` |
+| GitHub | `github` |
+| Notion | `notion` |
+| Airtable | `airtable` |
+| Google Calendar | `google-calendar` |
+| Google Drive | `google-drive` |
+| Gmail | `google-mail` |
+| HubSpot | `hubspot` |
+| Salesforce | `salesforce` |
+| +100 more | ... |
+
+See [Maton documentation](https://maton.ai) for full list.

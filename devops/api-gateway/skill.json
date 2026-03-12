@@ -1,40 +1,22 @@
 {
   "name": "api-gateway",
   "version": "1.0.0",
-  "description": "通过托管的 OAuth 连接 100+ API（Google Workspace、Microsoft 365、Notion、Slack 等）",
-  "author": "yanjiayi-bd (cloned from clawhub top11)",
+  "description": "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth.",
+  "homepage": "https://maton.ai",
+  "author": "maton (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": ["api", "gateway", "oauth", "integration"],
+  "tags": ["api", "gateway", "oauth", "integration", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🧠",
+      "requires": {
+        "env": ["MATON_API_KEY"]
+      },
+      "homepage": "https://maton.ai"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {
-    "service": {
-      "type": "string",
-      "description": "服务名称: google | microsoft | notion | slack | ...",
-      "required": true
-    },
-    "endpoint": {
-      "type": "string",
-      "description": "API 端点",
-      "required": true
-    },
-    "method": {
-      "type": "string",
-      "description": "HTTP 方法: GET | POST | PUT | DELETE",
-      "default": "GET"
-    },
-    "data": {
-      "type": "object",
-      "description": "请求数据",
-      "default": {}
-    }
-  },
-  "outputs": {
-    "response": {
-      "type": "object",
-      "description": "API 响应"
-    }
   }
 }

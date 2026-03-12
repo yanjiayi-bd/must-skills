@@ -1,15 +1,22 @@
-# Role: sonoscli
+# Sonos CLI
 
-## 任务
-Sonos control
+Use `sonos` to control Sonos speakers on the local network.
 
-## 来源
-- 原始作者: Peter Steinberger
-- 来源: ClawHub Top 10 (Rank #8)
-- 自动同步时间: 2026-03-12 19:22:45
+## Quick start
 
-## 使用说明
-此技能每周从 ClawHub 自动同步学习并安装。
+- `sonos discover`
+- `sonos status --name "Kitchen"`
+- `sonos play|pause|stop --name "Kitchen"`
+- `sonos volume set 15 --name "Kitchen"`
 
-## 原始描述
-Sonos control
+## Common tasks
+
+- Grouping: `sonos group status|join|unjoin|party|solo`
+- Favorites: `sonos favorites list|open`
+- Queue: `sonos queue list|play|clear`
+- Spotify search (via SMAPI): `sonos smapi search --service "Spotify" --category tracks "query"`
+
+## Notes
+
+- If SSDP fails, specify `--ip <speaker-ip>`.
+- Spotify Web API search is optional and requires `SPOTIFY_CLIENT_ID/SECRET`.

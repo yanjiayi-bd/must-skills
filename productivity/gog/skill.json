@@ -1,17 +1,30 @@
 {
   "name": "gog",
   "version": "1.0.0",
-  "description": "Google Workspace CLI",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
+  "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+  "homepage": "https://gogcli.sh",
+  "author": "Peter Steinberger (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["google", "workspace", "gmail", "calendar", "drive", "cli", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎮",
+      "requires": {
+        "bins": ["gog"]
+      },
+      "install": [
+        {
+          "id": "brew",
+          "kind": "brew",
+          "formula": "steipete/tap/gogcli",
+          "bins": ["gog"],
+          "label": "Install gog (brew)"
+        }
+      ]
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }

@@ -1,17 +1,17 @@
 {
   "name": "self-improving-agent",
   "version": "1.0.0",
-  "description": "Self-evolution agent",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: pskoett)",
+  "description": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Claude ('No, that's wrong...', 'Actually...'), (3) User requests a capability that doesn't exist, (4) An external API or tool fails, (5) Claude realizes its knowledge is outdated or incorrect, (6) A better approach is discovered for a recurring task. Also review learnings before major tasks.",
+  "author": "pskoett (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["self-improvement", "learning", "memory", "errors", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🧠"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }

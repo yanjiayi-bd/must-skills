@@ -1,17 +1,17 @@
 {
   "name": "github",
   "version": "1.0.0",
-  "description": "GitHub CLI",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
+  "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+  "author": "Peter Steinberger (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["github", "git", "cli", "devops", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🐙"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }

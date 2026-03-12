@@ -1,15 +1,30 @@
-# Role: weather
+# Weather
 
-## 任务
-Weather query
+Get real-time weather and forecast without API key.
 
-## 来源
-- 原始作者: Peter Steinberger
-- 来源: ClawHub Top 10 (Rank #9)
-- 自动同步时间: 2026-03-12 19:22:45
+## Usage
 
-## 使用说明
-此技能每周从 ClawHub 自动同步学习并安装。
+```bash
+# Current weather
+weather "New York"
+weather "Beijing"
 
-## 原始描述
-Weather query
+# Forecast
+weather "London" --forecast
+
+# Different units
+weather "Tokyo" --units metric
+weather "Los Angeles" --units imperial
+```
+
+## Options
+
+- `--forecast`: Show 5-day forecast
+- `--units metric|imperial`: Temperature units
+- `--json`: Machine-readable output
+
+## Notes
+
+- No API key required
+- Uses free weather data sources
+- Location can be city name, zip code, or coordinates

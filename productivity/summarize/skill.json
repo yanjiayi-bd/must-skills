@@ -1,17 +1,30 @@
 {
   "name": "summarize",
   "version": "1.0.0",
-  "description": "Content summarization",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
+  "description": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+  "homepage": "https://summarize.sh",
+  "author": "Peter Steinberger (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["summarize", "content", "extraction", "nlp", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🧾",
+      "requires": {
+        "bins": ["summarize"]
+      },
+      "install": [
+        {
+          "id": "brew",
+          "kind": "brew",
+          "formula": "steipete/tap/summarize",
+          "bins": ["summarize"],
+          "label": "Install summarize (brew)"
+        }
+      ]
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }

@@ -1,15 +1,32 @@
-# Role: tavily-search
+# Tavily Search
 
-## 任务
-AI web search
+AI-optimized web search using Tavily API. Designed for AI agents - returns clean, relevant content.
 
-## 来源
-- 原始作者: arun-8687
-- 来源: ClawHub Top 10 (Rank #3)
-- 自动同步时间: 2026-03-12 19:22:45
+## Search
 
-## 使用说明
-此技能每周从 ClawHub 自动同步学习并安装。
+```bash
+node {baseDir}/scripts/search.mjs "query"
+node {baseDir}/scripts/search.mjs "query" -n 10
+node {baseDir}/scripts/search.mjs "query" --deep
+node {baseDir}/scripts/search.mjs "query" --topic news
+```
 
-## 原始描述
-AI web search
+## Options
+
+- `-n <count>`: Number of results (default: 5, max: 20)
+- `--deep`: Use advanced search for deeper research (slower, more comprehensive)
+- `--topic <topic>`: Search topic - `general` (default) or `news`
+- `--days <n>`: For news topic, limit to last n days
+
+## Extract content from URL
+
+```bash
+node {baseDir}/scripts/extract.mjs "https://example.com/article"
+```
+
+## Notes
+
+- Needs `TAVILY_API_KEY` from https://tavily.com
+- Tavily is optimized for AI - returns clean, relevant snippets
+- Use `--deep` for complex research questions
+- Use `--topic news` for current events

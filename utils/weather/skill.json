@@ -1,17 +1,17 @@
 {
   "name": "weather",
   "version": "1.0.0",
-  "description": "Weather query",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: Peter Steinberger)",
+  "description": "Get real-time weather and forecast (no API key required).",
+  "author": "Peter Steinberger (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["weather", "forecast", "query", "utility", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🌤️"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }

@@ -1,17 +1,23 @@
 {
   "name": "tavily-search",
   "version": "1.0.0",
-  "description": "AI web search",
-  "author": "yanjiayi-bd (auto-sync from clawhub, original: arun-8687)",
+  "description": "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.",
+  "homepage": "https://tavily.com",
+  "author": "arun-8687 (cloned by yanjiayi-bd)",
   "license": "MIT",
   "type": "skill",
-  "tags": [
-    "auto-sync",
-    "clawhub-top10"
-  ],
+  "tags": ["search", "web", "tavily", "ai-search", "research", "clawhub-top10"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔍",
+      "requires": {
+        "bins": ["node"],
+        "env": ["TAVILY_API_KEY"]
+      },
+      "primaryEnv": "TAVILY_API_KEY"
+    }
+  },
   "entry": {
     "prompt": "prompt.md"
-  },
-  "inputs": {},
-  "outputs": {}
+  }
 }
