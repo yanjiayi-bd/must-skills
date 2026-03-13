@@ -1,0 +1,21 @@
+{
+  "name": "notion",
+  "version": "1.0.0",
+  "description": "Notion - 强大的 API 接口，轻松创建、管理 Notion 页面、数据库和内容块，实现工作流程自动化",
+  "homepage": "https://developers.notion.com",
+  "author": "Notion (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["notion", "notes", "database", "productivity", "api"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📝",
+      "requires": {
+        "env": ["NOTION_API_KEY"]
+      }
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

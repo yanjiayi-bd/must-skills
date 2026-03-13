@@ -1,0 +1,18 @@
+{
+  "name": "humanizer",
+  "version": "1.0.0",
+  "description": "Humanizer - 消除文本中 AI 生成的痕迹，使内容更自然流畅，更像人类写作",
+  "homepage": "https://skillhub.tencent.com",
+  "author": "SkillHub Tencent (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["humanizer", "ai-detection", "writing", "content", "nlp"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "✍️"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

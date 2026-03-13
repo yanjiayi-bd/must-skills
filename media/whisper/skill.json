@@ -1,0 +1,21 @@
+{
+  "name": "whisper",
+  "version": "1.0.0",
+  "description": "OpenAI Whisper - 本地语音转文本服务，高质量离线语音识别，无需 API 密钥",
+  "homepage": "https://github.com/openai/whisper",
+  "author": "OpenAI (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["whisper", "speech-to-text", "audio", "ai", "local"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎤",
+      "requires": {
+        "bins": ["whisper"]
+      }
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

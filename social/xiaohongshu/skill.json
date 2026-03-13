@@ -1,0 +1,18 @@
+{
+  "name": "xiaohongshu",
+  "version": "1.0.0",
+  "description": "小红书 Automation - 自动化内容运营，支持发布图文视频、搜索笔记趋势、分析帖子评论及管理用户资料",
+  "homepage": "https://skillhub.tencent.com",
+  "author": "SkillHub Tencent (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["xiaohongshu", "rednote", "social-media", "automation", "china"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📕"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

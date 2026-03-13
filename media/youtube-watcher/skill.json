@@ -1,0 +1,18 @@
+{
+  "name": "youtube-watcher",
+  "version": "1.0.0",
+  "description": "YouTube Watcher - 抓取并阅读 YouTube 视频字幕，快速总结视频内容、解答疑问或提取关键信息",
+  "homepage": "https://skillhub.tencent.com",
+  "author": "SkillHub Tencent (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["youtube", "video", "subtitles", "transcript", "summarization"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📺"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

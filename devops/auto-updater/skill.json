@@ -1,0 +1,18 @@
+{
+  "name": "auto-updater",
+  "version": "1.0.0",
+  "description": "Auto-Updater - 每日自动更新 OpenClaw 及其所有已安装技能，确保系统始终保持最新",
+  "homepage": "https://skillhub.tencent.com",
+  "author": "SkillHub Tencent (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["updater", "maintenance", "automation", "devops"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🔄"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "frontend-design",
+  "version": "1.0.0",
+  "description": "Frontend Design - 创建独特、生产级的优质前端界面，生成富有创意、精良的代码，避免通用AI美学",
+  "homepage": "https://skillhub.tencent.com",
+  "author": "SkillHub Tencent (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["frontend", "design", "ui", "ux", "code-generation"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎨"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

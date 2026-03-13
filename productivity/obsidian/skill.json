@@ -1,0 +1,21 @@
+{
+  "name": "obsidian",
+  "version": "1.0.0",
+  "description": "Obsidian - 管理 Obsidian 笔记库，处理纯 Markdown 格式的笔记，通过 obsidian-cli 实现自动化操作",
+  "homepage": "https://obsidian.md",
+  "author": "Obsidian (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["obsidian", "notes", "markdown", "pkm", "knowledge"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🧠",
+      "requires": {
+        "bins": ["obsidian-cli"]
+      }
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

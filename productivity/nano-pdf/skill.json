@@ -1,0 +1,18 @@
+{
+  "name": "nano-pdf",
+  "version": "1.0.0",
+  "description": "Nano PDF - CLI工具，支持通过自然语言指令轻松编辑PDF文件",
+  "homepage": "https://skillhub.tencent.com",
+  "author": "SkillHub Tencent (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["pdf", "document", "editor", "cli"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📄"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

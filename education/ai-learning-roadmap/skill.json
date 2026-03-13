@@ -1,0 +1,18 @@
+{
+  "name": "ai-learning-roadmap",
+  "version": "1.0.0",
+  "description": "AI 学习路线图定制 - 为你定制AI学习路线图，提供每阶段学习资料、作业项目，从新手到大师",
+  "homepage": "https://www.coze.cn/skills",
+  "author": "Coze (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["ai", "learning", "roadmap", "education", "career"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "🎓"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

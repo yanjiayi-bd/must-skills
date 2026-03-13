@@ -1,0 +1,18 @@
+{
+  "name": "history-courseware",
+  "version": "1.0.0",
+  "description": "历史课件生成 - 历史学科交互式课件自动生成工具",
+  "homepage": "https://www.coze.cn/skills",
+  "author": "Coze (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["history", "education", "courseware", "teaching", "ppt"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📜"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}

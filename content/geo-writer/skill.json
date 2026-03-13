@@ -1,0 +1,18 @@
+{
+  "name": "geo-writer",
+  "version": "1.0.0",
+  "description": "GEO文章生成 - SEO优化技能：精通E-E-A-T与GEO框架，生成符合AI引擎抓取的深度内容",
+  "homepage": "https://www.coze.cn/skills",
+  "author": "Coze (cloned by yanjiayi-bd)",
+  "license": "MIT",
+  "type": "skill",
+  "tags": ["seo", "geo", "content", "writing", "marketing"],
+  "metadata": {
+    "clawdbot": {
+      "emoji": "📝"
+    }
+  },
+  "entry": {
+    "prompt": "prompt.md"
+  }
+}
